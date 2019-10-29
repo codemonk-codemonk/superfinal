@@ -12,6 +12,20 @@
 */
 
 
+Route::get('/callsuccess',function(){
+  return view('paymentdone');
+});
+
+Route::get('/callcheckout',function(){
+  return view('checkout');
+});
+Route::post('createRequest','InstaController@createRequest');
+
+
+Route::post('/transfer','CarFormController@store');
+
+
+
 
 Route::group(['middleware' => ['auth','admin']],function(){
 
@@ -136,7 +150,7 @@ Route::get('/calllaptopform', function () {
     return view('laptop_form');
 });
 
-Route::post('/callcarform','CarFormController@store');
+Route::post('/callcarform','PaymentController@store');
 Route::post('/callbikeform','BikeFormController@store');
 Route::post('/callmobileform', 'MobileController@store');
 Route::post('/calllaptopform', 'LaptopController@store');

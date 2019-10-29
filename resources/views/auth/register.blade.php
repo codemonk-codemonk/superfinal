@@ -92,6 +92,23 @@ p.pd {
                             </div>
                         </div>
 
+
+
+                        <div class="form-group{{ $errors->has('aadharno') ? ' has-error' : '' }}">
+                            <label for="aadharno" class="col-md-4 control-label">Aadhar No.:</label>
+                              <div class="col-md-6">
+                                <input id="aadharno" type="text" class="form-control" name="aadharno" value="{{ old('aadharno') }}">
+                                   @if ($errors->has('aadharno'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('aadharno') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+
+
                         <div class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
 
                               <label for="gender" class="col-md-4 control-label">Gender:</label>

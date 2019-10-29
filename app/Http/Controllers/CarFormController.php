@@ -2,10 +2,21 @@
 
 namespace App\Http\Controllers;
 
+
+
+use App\Http\Controllers\PaymentController;
+
+use App\User;
+
+use App\Payment;
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Carform;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\DB;
+
 
 class CarFormController extends Controller
 {
@@ -38,6 +49,8 @@ class CarFormController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,array(
+
+
            'carreg'=>'required',
            'modelnumber'=>'required',
            'chassisnumber'=>'required',
@@ -48,25 +61,47 @@ class CarFormController extends Controller
            'uploadchassisnumberphoto'=>'required',
            'uploadfront'=>'required',
            'uploadback'=>'required'
-           
 
-           
+
+
         ));
 
 
-        
+
+
+      //  $curr = Auth::User();
+
+      $curr  = auth()->user();
+
+
+    // $pay = auth()->Payment();
+
+
+
       $reg=new Carform;
-        $reg->carreg=$request->carreg;
-        $reg->modelnumber = $request->modelnumber;
-        $reg->chassisnumber = $request->chassisnumber;
-        $reg->purchasingdate = $request->purchasingdate;
-        $reg->price =$request->price;
-        $reg->uploadbill = $request->uploadbill;
-        $reg->uploadcarphoto= $request->uploadcarphoto;
-        $reg->uploadchassisnumberphoto = $request->uploadchassisnumberphoto;
-        $reg->uploadfront = $request->uploadfront;
-        $reg->uploadback = $request->uploadback;
-        
+
+
+     $pay = Payment ::select('select * from payments');
+
+        $reg->ownername=$curr->name;
+
+        $reg->aadharno=$curr->aadharno;
+
+        $reg->mobno=$curr->mobno;
+
+        $reg->email=$curr->email;
+
+        $reg->carreg=$pay->carreg;
+        $reg->modelnumber = $pay->modelnumber;
+        $reg->chassisnumber = $pay->chassisnumber;
+        $reg->purchasingdate = $pay->purchasingdate;
+        $reg->price =$pay->price;
+        $reg->uploadbill = $pay->uploadbill;
+        $reg->uploadcarphoto= $pay->uploadcarphoto;
+        $reg->uploadchassisnumberphoto = $pay->uploadchassisnumberphoto;
+        $reg->uploadfront = $pay->uploadfront;
+        $reg->uploadback = $pay->uploadback;
+
        $reg->save();
     }
 

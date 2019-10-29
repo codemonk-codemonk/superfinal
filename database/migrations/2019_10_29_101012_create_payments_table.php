@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCarformsTable extends Migration
+class CreatePaymentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateCarformsTable extends Migration
      */
     public function up()
     {
-        Schema::create('Carforms', function (Blueprint $table) {
+        Schema::create('Payments', function (Blueprint $table) {
             $table->bigIncrements('id');
 
             $table->string('ownername');

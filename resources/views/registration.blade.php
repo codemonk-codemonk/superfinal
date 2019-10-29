@@ -3,17 +3,17 @@
 <title>Registration Form</title>
 <link rel="stylesheet" type="text/css" href="reg.css">
 </head>
- 
+
 <body>
 <h3>REGISTRATION FORM</h3>
 
 
 
-<form action="{{url('callregister')}}" method="POST"> 
+<form action="{{url('callregister')}}" method="POST">
   {{csrf_field()}}
- 
+
 <table align="center" cellpadding = "15">
- 
+
 <!----- First Name ---------------------------------------------------------->
 <tr>
 <td>Full name</td>
@@ -22,26 +22,26 @@
 </td>
 </tr>
 
- 
+
 <!----- Date Of Birth -------------------------------------------------------->
 <tr>
 <td>DATE OF BIRTH</td>
- 
+
 <td>
 
         <input type="date" name="bday">
 
 
-    
+
 </td>
 </tr>
- 
+
 <!----- Email Id ---------------------------------------------------------->
 <tr>
 <td>EMAIL ID</td>
 <td><input type="text" name="Email_Id" maxlength="100" /></td>
 </tr>
- 
+
 <!----- Mobile Number ---------------------------------------------------------->
 <tr>
 <td>MOBILE NUMBER</td>
@@ -50,7 +50,21 @@
 (10 digit number)
 </td>
 </tr>
- 
+
+
+
+<!----- Aadhar Number Number ---------------------------------------------------------->
+<tr>
+<td>AADHAR NUMBER</td>
+<td>
+<input type="text" name="Aadhar_Number" maxlength="12" />
+(12 digit number)
+</td>
+</tr>
+
+
+
+
 <!----- Gender ----------------------------------------------------------->
 <tr>
 <td>GENDER</td>
@@ -59,13 +73,13 @@ Male <input type="radio" name="Gender" value="Male" />
 Female <input type="radio" name="Gender" value="Female" />
 </td>
 </tr>
- 
+
 <!----- Address ---------------------------------------------------------->
 <tr>
 <td>ADDRESS <br /><br /><br /></td>
 <td><textarea name="Address" rows="4" cols="30"></textarea></td>
 </tr>
- 
+
 <!----- City ---------------------------------------------------------->
 <tr>
 <td>CITY</td>
@@ -73,7 +87,7 @@ Female <input type="radio" name="Gender" value="Female" />
 (max 30 characters a-z and A-Z)
 </td>
 </tr>
- 
+
 <!----- Pin Code ---------------------------------------------------------->
 <tr>
 <td>PIN CODE</td>
@@ -99,7 +113,7 @@ Female <input type="radio" name="Gender" value="Female" />
 (max 30 characters a-z and A-Z)
 </td>
 </tr>
- 
+
 <!----- Country ---------------------------------------------------------->
 <tr>
 <td>COUNTRY</td>
@@ -117,7 +131,7 @@ Female <input type="radio" name="Gender" value="Female" />
 
 
 
- 
+
 
 
 <!----- Submit and Reset ------------------------------------------------->
@@ -128,8 +142,8 @@ Female <input type="radio" name="Gender" value="Female" />
 </td>
 </tr>
 </table>
- 
+
 </form>
- 
+
 </body>
 </html>

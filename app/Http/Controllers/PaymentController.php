@@ -2,12 +2,21 @@
 
 namespace App\Http\Controllers;
 
+
+
+//use App\Http\Controllers\AuthController;
+
+use App\User;
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Register;
+use App\Payment;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\DB;
 
-class RegistraionController extends Controller
+
+class PaymentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -38,38 +47,59 @@ class RegistraionController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,array(
-           'Name'=>'required',
-           'bday'=>'required',
-           'Email_Id'=>'required',
-           'Mobile_Number'=>'required',
-           'Aadhar_Number'=>'required',
-           'Gender'=>'required',
-           'Address'=>'required',
-           'City'=>'required',
-           'Pin_Code'=>'required',
-           'Aadhar'=>'required',
-           'State'=>'required',
-           'Country'=>'required',
-           'uploadfile'=>'required'
+
+
+           'carreg'=>'required',
+           'modelnumber'=>'required',
+           'chassisnumber'=>'required',
+           'purchasingdate'=>'required',
+           'price'=>'required',
+           'uploadbill'=>'required',
+           'uploadcarphoto'=>'required',
+           'uploadchassisnumberphoto'=>'required',
+           'uploadfront'=>'required',
+           'uploadback'=>'required'
+
 
 
         ));
 
 
-      $reg=new Register;
-        $reg->FullName =$request->Name;
-        $reg->Bday = $request->bday;
-        $reg->Email = $request->Email_Id;
-        $reg->Mobile = $request->Mobile_Number;
-        $reg->Gender =$request->Gender;
-        $reg->Address = $request->Address;
-        $reg->City = $request->City;
-        $reg->Pin_Code = $request->Pin_Code;
-        $reg->Aadhar = $request->Aadhar;
-        $reg->State = $request->State;
-        $reg->Country = $request->Country;
-        $reg->uploadfile = $request->uploadfile;
+
+
+      //  $curr = Auth::User();
+
+      $curr  = auth()->user();
+
+
+      $reg=new Payment;
+
+
+
+
+        $reg->ownername=$curr->name;
+
+        $reg->aadharno=$curr->aadharno;
+
+        $reg->mobno=$curr->mobno;
+
+        $reg->email=$curr->email;
+
+        $reg->carreg=$request->carreg;
+        $reg->modelnumber = $request->modelnumber;
+        $reg->chassisnumber = $request->chassisnumber;
+        $reg->purchasingdate = $request->purchasingdate;
+        $reg->price =$request->price;
+        $reg->uploadbill = $request->uploadbill;
+        $reg->uploadcarphoto= $request->uploadcarphoto;
+        $reg->uploadchassisnumberphoto = $request->uploadchassisnumberphoto;
+        $reg->uploadfront = $request->uploadfront;
+        $reg->uploadback = $request->uploadback;
+
        $reg->save();
+
+       return redirect('/callcheckout');
+
     }
 
     /**
