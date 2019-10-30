@@ -63,19 +63,15 @@ $pay = Payment ::select('select * from payments');
 
 
 
-         $reg->ownername=$curr->name;
-
          $reg->aadharno=$curr->aadharno;
-
-         $reg->mobno=$curr->mobno;
-
-         $reg->email=$curr->email;
 
          $reg->carreg = $pay->carreg;
          $reg->modelnumber = $pay->modelnumber;
          $reg->chassisnumber = $pay->chassisnumber;
          $reg->purchasingdate = $pay->purchasingdate;
          $reg->price =$pay->price;
+         $reg->amounttobepaid = $pay->amounttobepaid;
+         $reg->amountidv = $pay->amountidv;
          $reg->uploadbill = $pay->uploadbill;
          $reg->uploadcarphoto= $pay->uploadcarphoto;
          $reg->uploadchassisnumberphoto = $pay->uploadchassisnumberphoto;

@@ -13,7 +13,14 @@ class CreateMobileformsTable extends Migration
     public function up()
     {
        Schema::create('Mobileforms', function (Blueprint $table) {
-            $table->bigIncrements('id');
+
+              $table->bigIncrements('id');
+
+             $table->string('aadharno');
+
+
+
+
 
             $table->string('mobilebrand');
             $table->string('imeinumber');
@@ -21,11 +28,13 @@ class CreateMobileformsTable extends Migration
             $table->date('purchasingdate');
             $table->string('purchasingfrom');
             $table->string('price');
+            $table->integer('amounttobepaid');
+            $table->integer('amountidv');
             $table->binary('uploadbill');
             $table->binary('uploadfront');
             $table->binary('uploadback');
             $table->binary('uploadimei');
-        
+
 
 
             $table->timestamps();

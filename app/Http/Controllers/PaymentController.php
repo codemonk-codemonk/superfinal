@@ -54,6 +54,8 @@ class PaymentController extends Controller
            'chassisnumber'=>'required',
            'purchasingdate'=>'required',
            'price'=>'required',
+           'amounttobepaid' => 'required',
+           'amountidv' => 'required',
            'uploadbill'=>'required',
            'uploadcarphoto'=>'required',
            'uploadchassisnumberphoto'=>'required',
@@ -77,19 +79,19 @@ class PaymentController extends Controller
 
 
 
-        $reg->ownername=$curr->name;
+
 
         $reg->aadharno=$curr->aadharno;
 
-        $reg->mobno=$curr->mobno;
 
-        $reg->email=$curr->email;
 
         $reg->carreg=$request->carreg;
         $reg->modelnumber = $request->modelnumber;
         $reg->chassisnumber = $request->chassisnumber;
         $reg->purchasingdate = $request->purchasingdate;
         $reg->price =$request->price;
+       $reg->amounttobepaid =  $request->amounttobepaid;
+       $reg->amountidv = $request->amountidv;
         $reg->uploadbill = $request->uploadbill;
         $reg->uploadcarphoto= $request->uploadcarphoto;
         $reg->uploadchassisnumberphoto = $request->uploadchassisnumberphoto;

@@ -15,16 +15,17 @@ class CreateCarformsTable extends Migration
         Schema::create('Carforms', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->string('ownername');
+
             $table->string('aadharno');
-            $table->string('mobno');
-            $table->string('email');
+
 
             $table->string('carreg');
             $table->string('modelnumber');
             $table->string('chassisnumber');
             $table->date('purchasingdate');
             $table->integer('price');
+            $table->integer('amounttobepaid');
+            $table->integer('amountidv');
             $table->binary('uploadbill');
             $table->binary('uploadcarphoto');
             $table->binary('uploadchassisnumberphoto');
