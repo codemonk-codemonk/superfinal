@@ -46,6 +46,48 @@ class CarFormController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+     public function storetwo()
+     {
+
+       $curr  = auth()->user();
+
+
+
+      // $pay = auth()->payment();
+
+$pay = Payment ::select('select * from payments');
+
+
+       $reg=new Carform;
+
+
+
+         $reg->ownername=$curr->name;
+
+         $reg->aadharno=$curr->aadharno;
+
+         $reg->mobno=$curr->mobno;
+
+         $reg->email=$curr->email;
+
+         $reg->carreg = $pay->carreg;
+         $reg->modelnumber = $pay->modelnumber;
+         $reg->chassisnumber = $pay->chassisnumber;
+         $reg->purchasingdate = $pay->purchasingdate;
+         $reg->price =$pay->price;
+         $reg->uploadbill = $pay->uploadbill;
+         $reg->uploadcarphoto= $pay->uploadcarphoto;
+         $reg->uploadchassisnumberphoto = $pay->uploadchassisnumberphoto;
+         $reg->uploadfront = $pay->uploadfront;
+         $reg->uploadback = $pay->uploadback;
+
+        $reg->save();
+
+
+     }
+
+
     public function store(Request $request)
     {
         $this->validate($request,array(
@@ -74,14 +116,14 @@ class CarFormController extends Controller
       $curr  = auth()->user();
 
 
-    // $pay = auth()->Payment();
+      $pay = auth()->Payment();
 
 
 
       $reg=new Carform;
 
 
-     $pay = Payment ::select('select * from payments');
+  //   $pay = Payment ::select('select * from payments');
 
         $reg->ownername=$curr->name;
 

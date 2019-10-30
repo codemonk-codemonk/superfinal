@@ -24,7 +24,7 @@ class Payment extends Model
        * @var array
        */
       protected $fillable = [
-          'name','dob','email','password','mobno','aadharno','usertype','gender','address','pincode','city','state','country','uploadfile',
+          'id','ownername','aadharno','mobno','email','carreg','modelnumber','chassisnumber','purchasingdate','price','uploadbill','uploadcarphoto','uploadchassisnumberphoto','uploadfront','uploadback','created_at','updated_at',
       ];
 
       /**

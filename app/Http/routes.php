@@ -22,7 +22,7 @@ Route::get('/callcheckout',function(){
 Route::post('createRequest','InstaController@createRequest');
 
 
-Route::post('/transfer','CarFormController@store');
+Route::get('/transfer','CarFormController@storetwo');
 
 
 
