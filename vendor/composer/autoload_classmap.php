@@ -13,6 +13,7 @@ return array(
     'CreateMobileformsTable' => $baseDir . '/database/migrations/2019_10_25_162057_create_Mobileforms_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePaymentsTable' => $baseDir . '/database/migrations/2019_10_29_101012_create_payments_table.php',
+    'CreatePolicyTable' => $baseDir . '/database/migrations/2019_11_07_132424_create_policy_table.php',
     'CreateRegistersTable' => $baseDir . '/database/migrations/2019_10_24_094924_create_Registers_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
