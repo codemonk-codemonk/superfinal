@@ -112,6 +112,68 @@ else if(test < (year_now-7)){
 
 
 
+
+<tr>
+<td>Name of policy holder&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <?php
+  $user = Auth::User();
+  print_r($user->name);
+  ?>
+ </td>
+
+     <td><input type="hidden" name="name" maxlength="100"/>  </td>
+</tr>
+
+
+<tr>
+<td>Aadhar number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <?php
+  $user = Auth::User();
+  print_r($user->aadharno);
+  ?>
+ </td>
+
+     <td><input type="hidden" name="name" maxlength="100"/>  </td>
+</tr>
+
+
+<tr>
+<td>Mobile number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <?php
+  $user = Auth::User();
+  print_r($user->mobno);
+  ?>
+ </td>
+
+     <td><input type="hidden" name="name" maxlength="100"/>  </td>
+</tr>
+
+
+
+<tr>
+<td>Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <?php
+  $user = Auth::User();
+  print_r($user->email);
+  ?>
+ </td>
+
+     <td><input type="hidden" name="name" maxlength="100"/>  </td>
+</tr>
+
+
+
+
+
+
+
+
+
+
 <!----- CAR REGISTRATION NUMBER -------------------------------------------------------->
 <tr>
 <td>BIKE REGISTRATION NUMBER</td>

@@ -2,10 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 
-use App\Http\Requests;
 use App\Bikeform;
+
+use App\Paymentbike;
+
+use App\User;
+
+use Illuminate\Http\Request;
+use App\Http\Requests;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\DB;
+
+
+
+
+
 
 
 class BikeFormController extends Controller
@@ -43,24 +55,35 @@ class BikeFormController extends Controller
            'modelnumber'=>'required',
            'purchasingdate'=>'required',
            'price'=>'required',
+           'amounttobepaid' => 'required',
+           'amountidv' => 'required',
            'uploadbill'=>'required',
            'uploadbikephoto'=>'required',
            'uploadfront'=>'required',
            'uploadback'=>'required'
-           
+
         ));
 
-        
-      $reg=new Bikeform;
+        $curr  = auth()->user();
+//  $curr = Auth::User();
+
+      $reg=new Paymentbike;
+
+
+
+        $reg->aadharno=$curr->aadharno;
+
         $reg->bikereg = $request->bikereg;
         $reg->modelnumber = $request->modelnumber;
         $reg->purchasingdate = $request->purchasingdate;
         $reg->price = $request->price;
+        $reg->amounttobepaid =  $request->amounttobepaid;
+        $reg->amountidv = $request->amountidv;
         $reg->uploadbill = $request->uploadbill;
         $reg->uploadbikephoto = $request->uploadbikephoto;
         $reg->uploadfront = $request->uploadfront;
         $reg->uploadback = $request->uploadback;
-       
+
        $reg->save();
 
 

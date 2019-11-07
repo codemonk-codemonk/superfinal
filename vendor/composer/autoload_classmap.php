@@ -12,6 +12,7 @@ return array(
     'CreateLaptopformsTable' => $baseDir . '/database/migrations/2019_10_25_162912_create_Laptopforms_table.php',
     'CreateMobileformsTable' => $baseDir . '/database/migrations/2019_10_25_162057_create_Mobileforms_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreatePaymentbikesTable' => $baseDir . '/database/migrations/2019_11_07_142745_create_paymentbikes_table.php',
     'CreatePaymentsTable' => $baseDir . '/database/migrations/2019_10_29_101012_create_payments_table.php',
     'CreatePolicyTable' => $baseDir . '/database/migrations/2019_11_07_132424_create_policy_table.php',
     'CreateRegistersTable' => $baseDir . '/database/migrations/2019_10_24_094924_create_Registers_table.php',

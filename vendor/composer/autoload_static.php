@@ -289,6 +289,7 @@ class ComposerStaticInit97fe2d800edccacc0ebb21e579f3c370
         'CreateLaptopformsTable' => __DIR__ . '/../..' . '/database/migrations/2019_10_25_162912_create_Laptopforms_table.php',
         'CreateMobileformsTable' => __DIR__ . '/../..' . '/database/migrations/2019_10_25_162057_create_Mobileforms_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+        'CreatePaymentbikesTable' => __DIR__ . '/../..' . '/database/migrations/2019_11_07_142745_create_paymentbikes_table.php',
         'CreatePaymentsTable' => __DIR__ . '/../..' . '/database/migrations/2019_10_29_101012_create_payments_table.php',
         'CreatePolicyTable' => __DIR__ . '/../..' . '/database/migrations/2019_11_07_132424_create_policy_table.php',
         'CreateRegistersTable' => __DIR__ . '/../..' . '/database/migrations/2019_10_24_094924_create_Registers_table.php',

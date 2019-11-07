@@ -15,10 +15,14 @@ class CreateBikeformsTable extends Migration
          Schema::create('Bikeforms', function (Blueprint $table) {
             $table->bigIncrements('id');
 
+            $table->string('aadharno');
+
             $table->string('bikereg');
             $table->string('modelnumber');
             $table->date('purchasingdate');
             $table->integer('price');
+            $table->integer('amounttobepaid');
+            $table->integer('amountidv');
             $table->binary('uploadbill');
             $table->binary('uploadbikephoto');
             $table->binary('uploadfront');
@@ -34,6 +38,6 @@ class CreateBikeformsTable extends Migration
      */
     public function down()
     {
-        
+
     }
 }
