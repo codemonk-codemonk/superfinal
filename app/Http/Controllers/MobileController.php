@@ -96,7 +96,7 @@ class MobileController extends Controller
            die("ERROR: Could not connect. " . mysqli_connect_error());
        }
 
-       $pretwo = "INSERT INTO policy (type,aadharno) VALUES ('3','$curr->aadharno')";
+       $pretwo = "INSERT INTO policy (type,aadharno) VALUES ('Mobile','$curr->aadharno')";
        mysqli_query($link, $pretwo);
        mysqli_close($link);
 

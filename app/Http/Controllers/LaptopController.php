@@ -92,7 +92,7 @@ class LaptopController extends Controller
                   die("ERROR: Could not connect. " . mysqli_connect_error());
               }
 
-              $pretwo = "INSERT INTO policy (type,aadharno) VALUES ('4','$curr->aadharno')";
+              $pretwo = "INSERT INTO policy (type,aadharno) VALUES ('Laptop','$curr->aadharno')";
               mysqli_query($link, $pretwo);
               mysqli_close($link);
 

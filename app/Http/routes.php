@@ -12,6 +12,12 @@
 */
 
 
+Route::get('/policy',function(){
+return view('showpolicy');
+});
+
+
+
 
 Route::get('/calllaptopcheckout',function(){
 return view('laptopcheckout');

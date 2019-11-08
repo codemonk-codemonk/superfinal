@@ -95,6 +95,8 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Profile</a></li>
+                                <li><a href="{{ url('/policy') }}"><i class="fa fa-btn fa-sign-out"></i>Policy</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>
