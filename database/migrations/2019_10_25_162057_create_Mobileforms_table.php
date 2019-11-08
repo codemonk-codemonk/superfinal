@@ -26,7 +26,6 @@ class CreateMobileformsTable extends Migration
             $table->string('imeinumber');
             $table->string('modelnumber');
             $table->date('purchasingdate');
-            $table->string('purchasingfrom');
             $table->string('price');
             $table->integer('amounttobepaid');
             $table->integer('amountidv');

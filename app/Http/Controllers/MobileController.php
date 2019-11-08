@@ -53,7 +53,6 @@ class MobileController extends Controller
            'imeinumber'=>'required',
            'modelnumber'=>'required',
            'purchasingdate'=>'required',
-           'purchasingfrom'=>'required',
            'price'=>'required',
            'amounttobepaid' => 'required',
            'amountidv' => 'required',
@@ -69,17 +68,13 @@ class MobileController extends Controller
         $curr  = auth()->user();
 
 
-
-
-
-
       $reg=new Mobileform;
+
         $reg->aadharno=$curr->aadharno;
         $reg->mobilebrand =$request->mobilebrand;
         $reg->imeinumber = $request->imeinumber;
         $reg->modelnumber = $request->modelnumber;
         $reg->purchasingdate = $request->purchasingdate;
-        $reg->purchasingfrom =$request->purchasingfrom;
         $reg->price = $request->price;
         $reg->amounttobepaid = $request->amounttobepaid;
         $reg->amountidv = $request->amountidv;
@@ -89,6 +84,26 @@ class MobileController extends Controller
         $reg->uploadimei = $request->uploadimei;
 
        $reg->save();
+
+
+       $servername = "localhost";
+       $username = "root";
+       $password = "";
+       $dbname = "superfinal";
+
+       $link = mysqli_connect($servername, $username, $password, $dbname);
+       if($link === false){
+           die("ERROR: Could not connect. " . mysqli_connect_error());
+       }
+
+       $pretwo = "INSERT INTO policy (type,aadharno) VALUES ('3','$curr->aadharno')";
+       mysqli_query($link, $pretwo);
+       mysqli_close($link);
+
+
+         return redirect('/callmobilecheckout');
+
+
     }
 
     /**

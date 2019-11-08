@@ -245,7 +245,7 @@ else if(test < (year_now-7)){
 <tr>
 <td><a href="{{ url('/callidv') }}"> INSURED DECLARED VALUE(IDV) </a></td>
 <td>
-<input id="amountidv" name="amountidv"> 
+<input id="amountidv" name="amountidv">
 </td>
 </tr>
 
