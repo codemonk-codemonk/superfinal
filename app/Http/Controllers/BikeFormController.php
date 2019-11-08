@@ -65,6 +65,7 @@ class BikeFormController extends Controller
         ));
 
         $curr  = auth()->user();
+<<<<<<< HEAD
 //  $curr = Auth::User();
 
       $reg=new Paymentbike;
@@ -73,6 +74,12 @@ class BikeFormController extends Controller
 
         $reg->aadharno=$curr->aadharno;
 
+=======
+
+
+      $reg=new Bikeform;
+      $reg->aadharno=$curr->aadharno;
+>>>>>>> atoz
         $reg->bikereg = $request->bikereg;
         $reg->modelnumber = $request->modelnumber;
         $reg->purchasingdate = $request->purchasingdate;
@@ -85,6 +92,23 @@ class BikeFormController extends Controller
         $reg->uploadback = $request->uploadback;
 
        $reg->save();
+
+     $servername = "localhost";
+     $username = "root";
+     $password = "";
+     $dbname = "superfinal";
+
+     $link = mysqli_connect($servername, $username, $password, $dbname);
+     if($link === false){
+         die("ERROR: Could not connect. " . mysqli_connect_error());
+     }
+
+     $pretwo = "INSERT INTO policy (type,aadharno) VALUES ('Bike','$curr->aadharno')";
+     mysqli_query($link, $pretwo);
+     mysqli_close($link);
+
+
+       return redirect('/callbikecheckout');
 
 
     }

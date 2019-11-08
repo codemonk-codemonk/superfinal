@@ -28,7 +28,7 @@ if($res = mysqli_query($link, $pre))
 {
   while($r = mysqli_fetch_array($res)){
       $aadharno = mysqli_real_escape_string($link, $r['aadharno'] );
-      $pretwo = "INSERT INTO policy (type,aadharno) VALUES ('1','$aadharno')";
+      $pretwo = "INSERT INTO policy (type,aadharno) VALUES ('Car','$aadharno')";
       mysqli_query($link, $pretwo);
   }
 }

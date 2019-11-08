@@ -30,17 +30,17 @@ function solve()
   let plan =  document.getElementById("plan").value;
   if( plan == "One" ){
     d=Math.floor(a);
-      document.getElementById("amount").innerHTML = d ;
+      document.getElementById("amounttobepaid").value = d ;
   }
   else if( plan == "Two" ){
     b = ( (a*2) - (x*1.0)/100);
     d=Math.floor(b);
-      document.getElementById("amount").innerHTML = d ;
+      document.getElementById("amounttobepaid").value = d ;
   }
   else if( plan == "Three" ){
     c = ( (a*3) - ((x*1.0)/100)*2);
     d=Math.floor(c);
-      document.getElementById("amount").innerHTML = d ;
+      document.getElementById("amounttobepaid").value = d ;
   }
 
 }
@@ -54,37 +54,37 @@ if( test > (year_now-1) ){
   aa = ( (xx * 1.0) / 100 ) * 10 ;
   bb = ( (xx*1.0) - aa );
   dd=Math.floor(bb);
-    document.getElementById("amountidv").innerHTML = dd ;
+    document.getElementById("amountidv").value = dd ;
 }
 else if( test > (year_now-2) ){
   aa = ( (xx * 1.0) / 100 ) * 20 ;
   bb = ( (xx*1.0) - aa );
   dd=Math.floor(bb);
-    document.getElementById("amountidv").innerHTML = dd ;
+    document.getElementById("amountidv").value = dd ;
 }
 else if( test > (year_now-3) ){
   aa = ( (xx * 1.0) / 100 ) * 30 ;
   bb = ( (xx*1.0) - aa );
   dd=Math.floor(bb);
-    document.getElementById("amountidv").innerHTML = dd ;
+    document.getElementById("amountidv").value = dd ;
 }
 else if( test > (year_now-4) ){
   aa = ( (xx * 1.0) / 100 ) * 40 ;
   bb = ( (xx*1.0) - aa );
   dd=Math.floor(bb);
-    document.getElementById("amountidv").innerHTML = dd ;
+    document.getElementById("amountidv").value = dd ;
 }
 else if( test > (year_now-5) ){
   aa = ( (xx * 1.0) / 100 ) * 50 ;
   bb = ( (xx*1.0) - aa );
   dd=Math.floor(bb);
-    document.getElementById("amountidv").innerHTML = dd ;
+    document.getElementById("amountidv").value = dd ;
 }
 else if(test < (year_now-7)){
   aa = ( (xx * 1.0) / 100 ) * 70 ;
   bb = ( (xx*1.0) - aa );
   dd=Math.floor(bb);
-    document.getElementById("amountidv").innerHTML = dd ;
+    document.getElementById("amountidv").value = dd ;
 }
 
 
@@ -94,8 +94,6 @@ else if(test < (year_now-7)){
 }
 
 </script>
-
-
 
 <body   onload="disableSubmit()"  >
 
@@ -241,7 +239,6 @@ else if(test < (year_now-7)){
   </tr>
 
 
-
   <tr>
   <td colspan="2" align="center">
   <button type="button" class="btn btn-primary" onclick="solve()" >Check</button>
@@ -252,14 +249,14 @@ else if(test < (year_now-7)){
   <tr>
   <td>AMOUNT TO BE PAID...</td>
         <td>
-       <p1 id="amount"></p1>
+       <input id="amounttobepaid" name="amounttobepaid">
      </td>
   </tr>
 
   <tr>
   <td><a href="{{ url('/callidv') }}"> INSURED DECLARED VALUE(IDV) </a></td>
   <td>
-  <p1 id="amountidv"></p1>
+  <input id="amountidv" name="amountidv">
   </td>
   </tr>
 

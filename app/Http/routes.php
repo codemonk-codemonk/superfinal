@@ -12,6 +12,29 @@
 */
 
 
+Route::get('/policy',function(){
+return view('showpolicy');
+});
+
+
+
+
+Route::get('/calllaptopcheckout',function(){
+return view('laptopcheckout');
+});
+
+
+
+Route::get('/callmobilecheckout',function(){
+return view('mobilecheckout');
+});
+
+
+Route::get('/callbikecheckout',function(){
+return view('bikecheckout');
+});
+
+
 Route::get('/callsuccess',function(){
   return view('paymentdone');
 });
